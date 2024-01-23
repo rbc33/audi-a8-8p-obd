@@ -1,0 +1,1105 @@
+In English and numerical order
+
+Control Units
+01 Engine
+
+Control unit coding
+
+xx??xxx
+Market/Emissions
+10 – Rest of World (EURO III)
+11 Rest of World (EURO IV)
+
+Xxxx?xx
+Functions
+
+
+STG Security Access-> Function 16
+
+ACC activation code: 13647
+
+GRA activation code: 11463
+
+ACC / GRA Deactivation Code: 16167
+
+0
+
+03 Brakes
+Control unit coding
+Hitch:
++0000000 - Towing device with towbar control unit (J345)
++0016384 - with / without hitch without hitch control unit (J345)
+
+Control unit basic setting (steering angle sender -G85-)
+Ignition ON, engine ON.
+access authorization
+Access authorization code: 40168
+default
+Now turn the steering wheel about 30 degrees to the left or right and back again until the front wheels are in straight ahead and the steering wheel is horizontal (tolerance +/- 4.5 degrees).
+Measured value group 001 (steering angle sender -G85-)
+Note: If the vehicle has a distance control (distance control), then in Stg. for distance control the steering angle offset can be reset.
+
+05 Keyless system
+
+STG coding -> function 07
+
++001 - standard (always set)
++002 - automatic
++004 - Advance Key
++008 - country variant USA
++016 - right hand drive
++032 - power reduction (Japan / South Korea )
++064 - Special vehicle
++128 - Avant
+
+07 Display
+Control unit coding
+? xxxxx: vehicle configuration
++1 - Driver Information System (FIS)
++2 - South America
++4 - 4-button keypad
+
+x? xxxx: vehicle configuration
++1 - internal amplifier (sound system)
++2 - Body variant "Avant"
++4 - leather interior
+xx? xxx: vehicle configuration
++1 - front seat adjustment
++2 - rear seat adjustment
++4 - Right hand drive
+
+xxx? xx: vehicle configuration
++1 - rear parking aid
++2 - Refepress control system
++4 - air suspension
+
+xxxx? x: vehicle configuration
++1 - Adaptive Cruise Control (ACC)
++2 - ambient lighting
++4 - parking aid front
+
+xxxxx ?: Country coding
+1 - German
+2 - English (GB)
+3 - English (US)
+4 - Spanish
+5 - Italian
+6 - French
+7 - Portuguese
+8 - reserved
+9 - Chinese
+
+Control unit adaptation
+-> channel 001 (MMI installation list)
+Installation list for MMI functionality CAR menu.
+
++00001 - adaptive cruise control (PR-8T4)
++00002 - Ambient lighting (PR-QQ1)
++00004 - acoustic parking system front (PR-7X2)
++00008 - acoustic parking system rear (PR-7X1 / 7X2)
++00016 - Tire pressure control system (PR-7K3 / 7K4 / 7K5)
++00032 - Sliding / tilting roof (PR-3FE / 3FR)
++00064 - adaptive air suspension (PR-1BK)
++00256 - Rain sensor (PR-8N3)
++00512 - one-touch memory (PR-4K5 / 4K6)
++01024 - Front seat adjustment (PR-3PN)
++02048 - Rear seat adjustment (PR-5Z1)
++04096 - Multifunction steering wheel (eg PR-1XW)
++16384 - Telematics (emergency call system / PR-9ZH / 9ZS / 9ZV)
+
+-> Channel 002 (MMI display options)
+Display option for MMI functionality CAR menu.
+
+xx: Body variant
+0 - Limousine (PR-4F0)
+1 - Avant (PR-4F0 K8D)
+x? x: chassis number
+0 - do not show chassis number (VIN)
+1 - Show chassis number (VIN)
+xx ?: Body variant
+0 - Right hand drive (PR-L0R)
+1 - left-hand drive (PR-L0L)
+
+-> Channel 003 (AutoReturn value)
+Time to automatically close MMI notification menus.
+
+-> channel 004 (speed threshold)
+Speed at which the functions Car menu is switched off.
+
+-> channel 005 (speed delta)
+Delta, from which the functions Car menu and teach-in process of the one-touch memory are reactivated (eg speed threshold = 15 km / h, speed delta = 5 km / h -> shutdown at 15 km / h, activation at 10 km / h) ,
+
+-> channel 006 (MMI follow-up time)
+Time between switch off and automatic shutdown of the MMI.
+
+-> Channel 011 (MMI range of functions)
+
+Additional MMI functions
+0 - logbook not available
+1 - Logbook available (standard)
+
+-> channel 012 (telephone type)
+0 - no telephone / telematics
+2 - Mobile phone preparation
+4 - Telematics
+
+
+-> Kanel 064 (brightness search lighting)
+Brightness of the keypad Change the search light (changes are not saved in the control unit).
+
+-> Kanel 065 (brightness function lighting)
+
+Brightness of the control panel Change the functional lighting (changes are not saved in the control unit).
+
+-> Kanel 066 (MMI display)
+Switch MMI display on / off.
+
+-> channel 067 (brightness display illumination)
+Brightness MMI Change display illumination (changes are not saved in the control unit).
+
+-> channel 068 (MMI test pattern)
+Output test pattern on the MMI display.
+0 - no test image
+1 - red
+2 - Green
+3 - Blue
+4 - white
+5 - Black
+6- chessboard (black / white)
+7 - chessboard (inverse)
+8 - 64 grayscale (vertical bars)
+
+-> channel 096 (transmit power)
+Reduces the transmission power of the optical bus by half (changes are not stored in the control unit).
+
+-> channel 111 (MMI system reset)
+An MMI reset is performed to activate newly encoded or adjusted values.
+
+09 Central Electrics
+Control unit coding
+0? Xxxxx: Steering column memory
+0 - without steering column memory or manual steering column
+1 - with steering column memory
+
+0x? Xxxx: footwell lighting
+0 - Footwell lighting installed as a lamp
+1 - Footwell lighting installed as LED
+
+0xx? Xxx: headlights
+0 - Halogen headlights without SRA
+1 - Halogen headlights with SRA
+2 - Bi-xenon headlights
+3 - Bi-xenon headlights with AFS
+
+0xxx? Xx: Driving light
+0 - without automatic driving light
+1 - with automatic driving light with sensor rain / light sensor
+
+0xxxx? X: Daytime running light
+0 - without daytime running lights
+1 - with daytime running lights not selectable via MMI
+2 - with daytime running lights selectable via MMI
+
+0xxxxx ?: country variant
+1 - Rest of the World (RdW)
+2 - Northerners (Finland, Sweden, Norway, Denmark)
+3 - US (US)
+4 - Canada (CDN)
+
+Control unit coding (variant 2: assignment unclear)
+00? Xxxx: footwell lighting
+0 - Footwell lighting installed as a lamp
+1 - Footwell lighting installed as LED
+
+00x? Xxx: headlights
+0 - halogen headlights
+1 - Bi-xenon headlights
+2 - Bi-xenon headlights without LED daytime running lights
+3 - Bi-xenon headlights with LED daytime running lights and AFS
+4 - Bi-xenon headlamps with separate 21W halogen daytime running lights and AFS
+
+00xx? Xx: driving light
+0 - without automatic driving light
+1 - with automatic headlight with light sensor (G399)
+3 - with automatic headlight with rain / light sensor (G397)
+
+00xxx? X: daytime running light
+0 - without daytime running lights
+1 - with daytime running lights selectable via MMI (default value: OFF)
+2 - with daytime running lights selectable via MMI (default value: ON)
+
+00xxxx ?: country variant
+1 - Rest of the World (RdW)
+2 - Northerners (Finland, Sweden, Norway, Denmark)
+3 - US (US)
+4 - Canada (CDN)
+7 - Special vehicles
+
+15 Airbag
+Control unit adaptation
+Adaptation By adjusting the airbag units are activated or deactivated, depending on the vehicle type or model, not all channels must be available.
+0 - activated
+1 - deactivated
+
+-> Channel 01 (airbag passenger side)
+-> Channel 02 (airbag driver side)
+-> Channel 03 (side airbag passenger side)
+-> Channel 04 (side airbag driver side)
+-> Channel 05 (belt tensioner passenger side)
+-> Channel 06 (belt tensioner driver side)
+
+16 Steering Column
+STG coding -> function 07
+Control unit coding
+xxxxx: execution
+0 - left-hand drive
+1 - Right hand drive
+
+x? xxxx: Steering column adjustment
+0 - no electric steering column adjustment
+1 - with electric steering column adjustment
+
+xx ?? xx: steering wheel version
+00 - standard steering wheel (no multifunction, no Tiptronic, not heated)
+11 - Sports steering wheel with Tiptronic
+20 - multifunction steering wheel (no Tiptronic on the steering wheel, not heated)
+21 - Multifunction steering wheel with Tiptronic (not heated)
+22 - Multifunction steering wheel heated (no Tiptronic)
+23 - Multifunction steering wheel heated with Tiptronic
+
+xxxx? x: Functional equipment
+0 - no on-board computer, no GRA, no ACC
+1 - on-board computer, no GRA, no ACC
+2 - with GRA, no on-board computer
+3 - with ACC, no on-board computer
+4 - on-board computer, GRA
+5 - on-board computer, ACC
+
+xxxxx ?: Body variant
+1 - sedan
+2 - Avant (rear wiper)
+
+17 Dashboard
+STG coding -> function 07
+Control unit coding
+? xxx: extra options and extra equipment
++0000 - no extra options
++0001 - second tank characteristic or quattro coding
++0002 - without FIS (driver information system)
++0004 - clutch vehicle (no automatic)
++0008 - second tire circumference pair
++0016 - Tire pressure control
++0032 - Air suspension (Adaptive Air Suspension)
++0064 - AFS (Dyn. LWR with Advanced Frontlighting System)
++0128 - ACC (Adaptive Crush Control)
++0256 - 70-liter tank (front drive only)
++1024 - Door presentation Avant (from MY 2006)
++2048 - Switchover option on-board computer levels (from MY 2006)
+
+xxxx? xx: country variant
+0 - Germany (DE)
+1 - Rest of the world left-hand drive (RdW)
+2 - USA (US)
+3 - Canada (CDN)
+4 - Great Britain (GB)
+5 - Japan left hand drive (JP)
+6 - Saudi Arabia (SA)
+7 - Australia (AUS)
+8 - Rest of the world right hand drive (RdW)
+9 - Japan right hand drive (JP)
+
+xxxxx? x: belt warning
+0 no belt warning
+1 Seatbelt warning European NCAP (Optical permanent warning, Acoustic alarm active for 91 seconds)
+2 strap warning USA / Canada old
+(Visual and audible warning for 6 seconds)
+3 Belt Warning USA / Canada NAR-new
+(Optical permanent warning, audible warning every 30 seconds)
+4 Seatbelt Warning European NCAP (including front passenger)
+(Optical permanent warning, audible alarm active for 91 seconds)
+5 Seatbelt warning USA / Canada old (including front passenger) (visual and audible warning for 6 seconds)
+6 Seatbelt Warning USA / Canada NAR-new (including Passenger) (Optical Permanent Warning, Acoustic Warning every 30 seconds)
+
+xxxxxx ?: Lighting options
+0 - hands and scales OFF (Kl.15 on & Kl.58 off)
+1 - Pointer ON, Scales OFF (Kl.15 On & Kl.58 Off)
+2 - Pointer OFF, Scales ON (Kl.15 On & Kl.58 Off)
+3 - hands and scales ON (2nd characteristic - cl.15 on & cl.58 off)
+
+Control unit adaptation
+STG adaptation -> function 10
+
+Hints:
+- In the A6 (4F) there are 2 different countries groupings that come into effect in the case of maintenance interval settings.
+- The service interval channels should be adjusted in the following order: 45> 43> 42> 44> 49 or 45> 42> 43> 49> 44.
+
+Countries Group 1 (flexible maintenance interval): Germany, Belgium, Denmark, Finland, France, Greece, Great Britain, Ireland, Iceland, Italy, Canary Islands, Luxembourg, Netherlands, Norway, Malta, Austria, Portugal, Sweden, Switzerland / Lichtenstein, Spain / Andorra, Czech Republic, Cyprus
+
+Countries Group 2 (fixed maintenance interval): Canada and USA, Poland, Turkey, New Zealand, Australia, China, CIS (excluding the Baltic States, Ukraine, Belarus), Special Requirement South America (excluding Argentina, Brazil, Chile), Romania, Chile, Special Requirement Middle East (Jordan, Syria, Lebanon), Special Requirement Middle East (Iraq, Afganistan), Special Requirement Africa (Excluding North / South Africa), South Africa, Special Requirement North Africa (Egypt, Algeria, Libya, Morocco, Tunisia), Special requirements Brunei, Albania, Macedonia, Argentina, Estonia, Lithuania, Belarus, Bahrain, Kuwait, Qatar, Dubai
+
+-> channel 02 (service interval display)
+To reset, enter "00000" and save the value.
+
+-> channel 03 (consumption display)
+The base value is 100 now you can set the whole in 1% steps, the respective maximum values are 85 (%) and 115 (%).
+
+-> channel 09 (odometer)
+The values indicate the distance to be displayed later in the KM counter (eg 11356 for a KM level of 113,560km).
+Before the instrument cluster accepts the new KM version, a login must be made with "13861".
+
+-> channel 19 (radio clock)
+The adjustment of the synchronization time for the radio clock takes place in minutes, the value 0 corresponds to the status no radio clock installed.
+Value range: 0 - 50 minutes
+
+-> Channel 29 (tank sensor characteristic 2) (Quattro only)
+The base value is 128 now you can set in 1er steps, this corresponds to 1/4 liter. The respective maximum values are 120 and 136, respectively. The parallel shift of the fuel sender characteristic curve takes place over the entire range.
+
+-> channel 30 (tank sensor characteristic 1)
+The base value is 128 now you can set in 1er steps, this corresponds to 1/4 liter. The respective maximum values are 120 and 136, respectively. The parallel shift of the fuel sender characteristic curve takes place over the entire range.
+
+-> channel 31 (wet calibration)
+Adjustment of the tank contents at the first filling on the belt. This value is used for correction. After the ignition is switched on for the first time, the instrument cluster corrects the tank sensor resistance to the liter value specified in this channel.
+
+-> channel 32 (dead volume)
+Adjustment of the volume not detected by the fuel gauge. This must be done before the first filling in channel 31.
+
+-> channel 33 (adjustment)
+Adjustment of the upper half of the fuel gauge curve, this is stretched or shrunk. The base value is 128 and can be negotiated in 1 ohm increments between 112 and 144. To start the correction, enter 65535 as the first adjustment value.
+
+-> channel 35 (adjustment of the speed threshold)
+The adaptation value 0 corresponds to a factory-set oil pressure warning if the oil pressure falls below 1.2 bar at a speed of 1500 rpm. The adaptation can be done in steps of 250 (0 - 1000).
+0000 - 1000 rpm
+0250 - 1750 rpm
+0500 - 2000 rpm
+0750 - 2250 rpm
+1000 - 2500 rpm
+
+-> channel 38 (oilmin warning)
+Adjustment of oilmin warning at low oil level. Before the setting, you must log in with 13861.
+0 - deactivated
+1 - activated
+
+-> Channel 39 (TOG sensor)
+This channel determines whether the temperature and oil level sender (TOG) is installed in the instrument cluster. Before the setting, you must log in with 13861.
+
+0 - deactivated (not installed in the instrument cluster)
+1 - activated (installed in the instrument cluster)
+
+-> Channel 40 (driven lane since last service)
+The input of the respective setpoint is only possible in steps of 100 km, thus the display is also shown.
+
+-> Channel 41 (time since last service)
+The input of the respective setpoint is only possible in steps of days, thus the indication in the display takes place in days.
+
+-> Channel 42 (minimum km mileage)
+The indication takes place in 100km (150x100 = 15.000km).
+
+080 - fixed maintenance interval (8,000 km / 5,000 miles)
+150 - flexible maintenance interval (15.000km)
+
+-> Channel 43 (maximum km mileage)
+The indication takes place in 100km (eg 150x100 = 15.000km).
+080 - fixed maintenance interval (8,000 km / 5,000 miles)
+300 - flexible maintenance interval (30,000 km / 19,000 miles)
+
+-> channel 44 (maximum time interval)
+The information is given in days.
+365 - fixed maintenance interval (group 2 countries)
+730 - flexible maintenance interval (Group 1 countries)
+
+-> Channel 45 (oil quality)
+1 - fixed maintenance interval (group 2 countries)
+2 - flexible maintenance interval (group 1 countries)
+
+-> Channel 46 (total consumption) (petrol only)
+The value stated in liters does not represent the actual consumption, but a calculation value for the service display from various engine data and mileage.
+
+-> Channel 47 (soot entry) (diesel only)
+The value indicated represents a comparison value for the service indicator. The displayed value is a calculated value for the soot content in engine oil, based on a distance of 100 km.
+
+-> Channel 48 (thermal load) (diesel only)
+The specified value represents a comparison value for the service indicator. The displayed value is a calculated value for the thermal load in the engine oil, based on a distance of 100 km.
+
+-> channel 49 (minimum time interval)
+The time is given in days.
+365 - fixed maintenance interval (all group 2 countries)
+365 - flexible maintenance interval (gasoline engines - group 1 countries)
+730 - flexible maintenance interval (Diesel engines - Group 1 countries)
+
+18 (auxiliary / auxiliary heater)
+
+STG Coding -> Function 07
+
+00? Xx: Coolant shut-off valve -N279-
+0 - No shut-off valve -N279- installed
+1 - Shut-off valve -N279- installed (standard)
+
+00x? X: Circulation pump -V55-
+0 - without auxiliary / auxiliary heating (no circulation pump -V55-)
+1 - with additional / auxiliary heating (with circulation pump -V55-)
+
+00xx ?: Undervoltage shutdown
+1 - via energy management control unit -J644-
+2 - via fixed voltage value (adaptation)
+
+19 Gateway
+Long Coding -> Function 07
+Byte 00 Bit 0 69 - Trailer detection installed
+Byte 00 Bit 1 13 - Distance control installed
+Byte 00 Bit 2 15 - Airbag system installed
+Byte 00 Bit 3 61 - Battery control installed
+Byte 00 Bit 4 38 - Roof electronics installed
+Byte 00 Bit 5 03 - Brake electronics (ABS) installed
+Byte 00 Bit 6 53 - Parking brake installed
+Byte 00 Bit 7 76 - Parking aid installed
+Byte 01 Bit 0 1D - Driver identification installed
+Byte 01 Bit 1 05 - Access and start authorization installed
+Byte 01 Bit 2 25 - Immobilizer installed
+Byte 01 Bit 3 19 - CAN-Gateway installed
+Byte 01 Bit 4 03 - Gearbox electronics installed
+Byte 01 Bit 5 09 - Onboard power supply electronics I installed
+Byte 01 Bit 6 4F - On-Board Electronic II installed
+Byte 01 Bit 7 46 - Comfort system installed
+Byte 02 Bit 0 17 - Combination instrument installed
+Byte 02 Bit 1 08 - Air conditioning / heating electronics installed
+Byte 02 Bit 2 28 - Air conditioning / heating electronics installed at the rear
+Byte 02 Bit 3 34 - Level control installed
+Byte 02 Bit 4 00 - Steering angle sensor (G85) installed
+Byte 02 Bit 5 55 - Headlamp leveling installed
+Byte 02 Bit 6 01 - Engine electronics I installed
+Byte 02 Bit 7 11 - Engine electronics II installed
+Byte 03 Bit 0 65 - Tire pressure monitoring installed
+Byte 03 Bit 1 18 - Heater / auxiliary heater installed
+Byte 03 Bit 2 16 - Steering column electronics installed
+Byte 03 Bit 3 36 - Driver's seat adjustment installed
+Byte 03 Bit 4 06 - Passenger seat adjustment installed
+Byte 03 Bit 5 66 - Rear seat adjustment installed
+Byte 03 Bit 6 42 - Door electronics driver installed
+Byte 03 Bit 7 52 - door electronics passenger installed
+Byte 04 Bit 0 62 - Door electronics installed on the rear left
+Byte 04 Bit 1 72 - Door electronics installed on the right rear
+Byte 04 Bit 2 27 - Rear display / operating unit installed
+Byte 04 Bit 3 07 - Display / operating unit installed
+Byte 04 bit 4
+
+0E - Mediaplayer position 1 installed
+Byte 04 Bit 5 1E - Mediaplayer position 2 installed
+Byte 04 Bit 6 2E - Mediaplayer Position 3 installed
+Byte 04 Bit 7 3E - Mediaplayer position 4 installed
+Byte 05 Bit 0 56 - Analog radio installed
+Byte 05 Bit 1 75 - Telematics / emergency call module installed
+Byte 05 Bit 2 57 - TV tuner installed
+Byte 05 Bit 3 0F - Digital Radio installed
+Byte 05 Bit 4 77 - Telephone / mobile phone preparation installed
+Byte 05 Bit 5 37 - Navigation system installed
+Byte 05 Bit 6 67 - Voice control installed
+Byte 05 Bit 7 4E - Display / operating unit installed on the right rear
+Byte 06 Bit 0 5E - Display / operating unit installed on the rear left
+Byte 06 Bit 1 1F - Satellite radio installed
+Byte 06 Bit 2 47 - Soundsystem installed
+
+46 Comfort System
+STG coding -> function 07
+Control unit coding
++000001 - Standard (always active)
++000002 - 10 Tamperalarms (GB / Ireland, PR-B09)
++000004 - Locking cylinder unlocks ZV electric (PR-7AA / 8AU)
++000008 - Selective central locking (SZV, PR-4K2 / 4K7 / 4K8)
++000016 - Anti-theft alarm system (PR-7AN / 7AL)
++000032 - Tilt sensor (PR-7AN / 7AL)
++000064 - Indoor sensor (PR-7AL)
++000128 - Comfort function via FFB (not PR-B29 / B30 / B34 / B35)
++000256 - right-hand drive (PR-L0R)
++000512 - Avant (rear window break detection, PR-K8D)
++001024 - Rear roller blind (PR-3Y2 / 3Y5)
++002048 - Acknowledge DWA honing (PR-A8U)
++004096 - SAE Taillights (USA, PR-A8U)
++008192 - Light Package (PR-QQ1)
++016384 - no SAFE function (PR-A8U)
++065536 - Anti-theft alarm delay time (0 seconds)
++131072 - Equipment Highline (Taillights LED)
++262144 - Sunroof (PR-3FE / 3FR)
++524288 - Multifunction Device (PR-F0X / F4E / F4F / F4G / F4J / F4Q / F4X / F4Z / F5F)
+
+Control unit adaptation
+STG adaptation -> function 10
+
+-> channel 01 (personalization key 1)
+
+-> channel 02 (personalization key 2)
+
+-> channel 03 (personalization key 3)
+
+-> Channel 04 (personalization key 4)
+Default value SZV: 96
+Default value ZV: 111
++00001 - Passenger door
++00002 - Rear left door
++00004 - Door rear right
++00008 - trunk
++00016 - Autolock
++00032 - Comfort opening FH front
++00064 - Comfort opening FH in the rear
++00128 - Open sunroof
++00256 - Extend the rear roller blind automatically
++00512 - Dimming value - interior light = 1%
++01024 - dimming value - interior light = 2%
++02048 - Dimming value - interior light = 4%
++04096 - dimming value - interior light = 8%
+
++08192 - Dimming value - interior light = 16%
++16384 - Dimming value - interior light = 32%
++32768 - Dimming value - interior light = 64%
+
+-> channel 15 (inclination sensor)
+Alarm threshold (default value: 200)
+200 - 100% = 0.0 °
+180-090% = 0.1 °
+160 - 080% = 0.2 °
+140 - 070% = 0.3 °
+120 - 060% = 0.4 °
+100-050% = 0.5 °
+
+-> channel 61 (comfort functions)
++001 - Comfort closing via radio for window regulators
++002 - Comfort opening via radio for window regulators
++004 - Comfort closing via radio for sunroof
++008 - Comfort opening via radio for sunroof
++016 - Comfort closing via FH switch FT for FH
++032 - Comfort opening via FH switch FT for FH
++064 - Comfort closing via FH switch FT for sunroof
++128 - Comfort opening via FH switch FT for sunroof
++256 - Comfort closing via closing button for window regulators
++512 - Comfort closing via sliding roof closing button
+
+-> Channel 62 (ZV Functions)
++1 - ZV Flashing
++2 - ZV On flashing
++4 - Cl. 87 USA Logic
+
+42 Driver Door 52 Passenger Door
+
+STG Coding -> Function 07
++000000 - Normal glass (PR-4KC)
++000001 - Button for tank lid unlocking (USA, PR-A8U)
++000002 - Inner door handle lighting (default)
++000004 - Insulating glass (PR-4KR / 4KV)
++000008 - Door exit / warning lights (default)
++000016 - Right hand drive (PR-L0R)
++000032 - Incident light side door trim (Ambient fog., PR-QQ1)
++000064 - Apron light (PR-QQ1)
++000128 - Outside mirror with memory (PR-6XF / 6XL)
++000256 - Mirror heater (PR -6XD / 6XE / 6XF / 6XJ / 6XK / 6XL)
++000512 - Internal locking switch (default setting)
++001024 - Avant
++002048 version - el. Rear child safety lock (PR-4H5)
++004096 - Opening
+aid +008192 - Pulling aid ( PR-) GZ2)
++016384 - Keyless Entry (Kessy, PR-4F2 / 4K5 / 4K7)
++065536 - eFH Deactivate Automatic
+
+Run +131072 -
+Vehicle In Destruction +262144 - Special
+Guard +524288 - Excess Force Limit. and eFH automatic. deactivate
+
+47 Sound System
+
+STG Coding -> Function 07
+
+Control unit Coding (BOSE DSP)
+
+0000xx ?: Features
+1 - right-hand drive with fabric and diesel engine
+2 - left-hand drive with leather trim and diesel engine
+3 - right hand drive with leather upholstery and diesel engine
+4 - left hand drive with fabric cover and petrol engine
+5 - right hand drive with fabric and gasoline engine
+6 - left hand drive with leather trim and petrol engine
+7 - right hand drive with leather trim and petrol engine
+8 - left hand drive with fabric cover and diesel engine (standard)
+
+0000x? X: microphone
+1 - Microphone for volume control
+2 - Microphone for voice control
+4 - Microphone for volume control and analogue input (AUX)
+5 - Microphone for voice and analogue input (AUX)
+
+0000? Xx: Body variant
+0 - Limousine
+1 - Avant
+
+control unit Coding (6-channel DSP )
+
+0000xx ?: Features
+1 - right hand drive with fabric and diesel engine
+2 - left hand drive with leather and diesel engine
+3 - right hand drive with leather and diesel engine
+4 - left hand drive with fabric cover and gasoline engine
+5 - right hand drive with fabric and Petrol engine
+6 - left-hand drive with leather trim and petrol engine
+7 - right-hand drive with leather trim and petrol engine
+8 - left-hand drive with fabric cover and diesel engine (standard)
+
+0000x? X: microphone
+0 - no microphone
+1 - microphone for voice control
+
+0000? Xx: body variant
+0 - sedan
+1 - Avant
+
+4F Central Electrics 2
+Control unit coding
+x? xxx: glove box release
+1 - active (default)
+
+xx? xx: Inclination sensor
+0 - not installed (PR-7AA)
+1 - installed (PR-7AL / 7AN)
+
+xxx? x: Sunroof
+0 - not installed (PR-3FA / 3FL)
+1 - installed (PR-3FE / 3FR)
+
+? xxx ?: engine variant
+0xxx3 - 6-cylinder diesel engine 3.0l (PR-T41 / 1N3)
+1xxx4 - 8-cylinder gasoline engine 4.2l (PR-T79 / T8T / 1N3)
+0xxx4 - Other basic motor (PR-TB3 / T14 / T15 / T44 / T45 / T61 / T9G / TQ0 / TA1 / 1N3)
+
+Control unit adaptation
+Security Access
+Before the adjustments can be made, a corresponding login must be made via the Security Access. Logincode: 12151
+
+-> channel 1 (inclination sensor threshold)
+Alarm threshold in X and Y direction (default value: 80)
+
+-> channel 2 (activation time glove boxes)
+Activate time for glove box opening (default: 100)
+
+-> Channel 3 (game protection counter)
+Time after which the game protection counter is reduced by 1 (default value: 20)
+
+-> Channel 4 (Game Protection Counter)
+Threshold for the game protection counter from which a control is prevented (default value: 20)
+
+53 Parking Brake
+STG coding -> function 07
+
+Control unit coding
+000 ?? xx: engine variant
+01 - 2,0l TDI
+02 - 2.5l TDI
+03 - 3.0l TDI
+04 - 4.0l TDI
+05 - 2.7l TDI
+10 - 2.0l T FSI
+20 - 2.4 l MPI
+30 - 2,8l FSI
+40 - 3.0l MPI
+50 - 3,2l FSI
+60 - 4,2l MPI
+70 - 4,2l FSI
+
+000xx? X: transmission variant
+1 - Manual gearbox ML310
+2 - Automatic AL420
+3 - Multitronic VL300
+4 - Multitronic VL380
+5 - Manual gearbox ML450
+6 - Automat AL600
+7 - Manual gearbox ML350
+
+000xxx ?: country variant
+1 - Rest of the World (RDW)
+2 - USA / Canada
+3 - Japan
+
+Control unit basic setting
+
+STG basic setting -> function 04
+
+Measured value group 006 (closing brakes)
+Measured value group 007 (open brakes)
+Measured value group 010 (functional test)
+The brake opens and closes 3 times.
+Measured value group 020 (calibrate inclination angle sensor)
+The vehicle must stand on a flat surface in the direction of travel and must not be shaken or moved. The el. Parkbrake / handbrake must be solved. The gear selector lever must be in position P and the ignition must be switched on.
+After approx. 2 seconds without movement the value is saved, after another approx. 12 seconds the basic setting is finished.
+
+Control unit adaptation
+STG adaptation -> function 10
+
+-> Channel 020 (rear brake left)
+Every second actuation of the parking brake via button E538 increases the value of this adjustment channel by one. In the case of a malfunction that results in the replacement of this brake motor, this adjustment channel must be set to 0.
+
+-> Channel 021 (rear brake right)
+Every second actuation of the parking brake via button E538 increases the value of this adjustment channel by one. In the case of a malfunction that results in the replacement of this brake motor, this adjustment channel must be set to 0.
+
+{Conditioning / heater electronics}
+
+Control unit adaptation
+
+Select STG 08 (air conditioning / heating electronics)
+STG adaptation -> function 10
+
+-> channel 003 (compressor shutdown)
+
+-> Channel 006 (decision support auxiliary heating / ventilation operation)
+
+-> channel 007 (shutdown behavior of auxiliary heating / auxiliary ventilation operation)
+
+-> Channel 015 (auxiliary heating / ventilation - Fresh air blower speed)
+
+-> Channel 016 (auxiliary heating - residual heat)
+
+-> Channel 017 (auxiliary heating - retrofit)
+
+-> channel 019 (additional heater connection)
+
+-> channel 021 (auxiliary heating - setting)
+
+-> channel 022 (fresh air blower characteristic)
+
+-> channel 023 (temperature characteristic)
+
+55 Headlight Regulation
+STG coding -> function 07
+LWR (standard)
+Control unit coding
+00003 - Steel spring without AFS (PR-8Q3 and 1BA / 1BD / 1BE / 1BR / 1BV)
+00004 - Steel spring with AFS (PR-8Q3 and 1BK)
+
+LWR with AFS (cornering light)
+Note: The coding is protected by a security access. Security Access Code: 02000
+00016 - Steel spring (PR-8Q5 and 1BA / 1BD / 1BE / 1BR)
+00017 - with air suspension (PR-8Q5 and 1BK)
+
+Control unit adaptation
+-> function 10
+
+-> Channel 20 (Show Room Effect) (AFS only)
+0 - activated
+1 - deactivated
+
+Control unit basic setting
+
+STG measured value blocks -> function 08
+Measured value group 001
+Go to Default
+Now adjust the headlights manually.
+Measured value group 001
+Go to Default
+The control position of the headlights is now "learned" by the control unit.
+
+62 Rear Left Door 72 Rear Right Door
+
+STG coding -> function 07
++000000 - standard glass (PR-4KC)
++000002 - inside door handle lighting (default setting)
++000004 - insulating glass ( PR-4KR / 4KV)
++000008 - Door exit / warning lights (default)
++000032 - Incident light side door trim (Ambient fog., PR-QQ1)
++000512 - Interior lock switch (China)
++001024 - Avant
++002048 version - el. Rear child safety lock (PR-4H5)
++016384 - Keyless Entry (Kessy, PR-4F2 / 4K5 / 4K7)
+
+65 Tyre Pressure Monitor
+STG coding -> Function 07
+
+control unit coding
+
+? Xxxxx: System
+0 - 1 antenna, 433 MHz (PR-7K7)
+1 - 1 antenna, 315 MHz (PR-7K8)
+2 - +4 trigger, 433 MHz (PR-7K3)
+3 - +4 trigger , 315 MHz (PR-7K4)
+4 - currently. not used (4 antennas, 433 MHz)
+5 - currently not used (4 antennas, 315 MHz)
+6 - 4 antennas, Japan (PR-7K5, reduced transmit power)
+
+x? xxxx: Functions
+0 - Rest of World (RdW)
+1 - Rest of World (RdW), Emergency
+2 - Rest of World (RdW), extra load
+3 - rest of the world (RdW), extra load, emergency run
+4 - USA
+5 - USA, run flat
+6 - USA, extra load
+7 - USA, extra load, emergency run
+
+xx? Xxx: target pressure VA partially loaded
+1 - 1.x bar
+2 - 2.x bar
+3 - 3.x bar
+
+xxx? Xx: setpoint VA partly loaded
+0 - x.0 bar
+1 - x.1 bar
+2 - x.2 bar
+3 - x.3 bar
+4 - x.4 bar
+5 - x.5 bar
+6 - x.6 bar
+7 - x.7 bar
+8 - x.8 bar
+9 - x.9 bar
+
+xxxx? X: set pressure HA partially loaded
+
+1 - 1.x bar
+2 - 2.x bar
+3 - 3.x bar
+
+xxxxx ?: set pressure HA partially loaded
+0 - x.0 bar
+1 - x.1 bar
+2 - x.2 bar
+3 - x.3 bar
+4 - x.4 bar
+5 - x.5 bar
+6 - x.6 bar
+7 - x.7 bar
+8 - x .8 bar
+9 - x.9 bar
+
+69 (Trailer detection) encoding
+Control unit coding
+0000? Xx: Handwheel
+0 - without control button
+3 - Handwheel for mechanical swivel function
+0000x? X: trailer connection unit
+0 - without mechanical swivel function
+3 - mechanical swivel function
+0000xx ?: country selection
+1 - Rest of the World (RdW)
+2 - USA
+3 - Australia
+
+76 Parking Assistance
+STG coding -> function 07
+Control unit coding
+0xxxxx: identification
+0 - without fingerprint ID
+1 - with fingerprint ID
+
+0x? Xxxx: Towbar / Rammschutz
+0 - without trailer hitch / without ramming protection
+1 - with trailer hitch / without ramming protection
+2 - without towing hitch / with ram protection
+3 - with trailer hitch / with ram protection
+
+0xx? Xxx: Transmission variant
+0 - manual transmission
+1 - Automatic transmission
+
+0xxx? Xx: country variant
+0 - Europe (without reinforced bumper)
+1 - Europe, sports variant (without reinforced bumper)
+2 - USA (with reinforced bumper)
+3 - USA, sports variant (with reinforced bumper)
+
+0xxxx? X: Body variant
+0 - sedan
+1 - Avant
+2 - convertible
+3 - coupe
+
+0xxxxx ?: Vehicle type
+3 - Audi A3 (8P)
+6 - Audi A6 (4F)
+8 - Audi A8 (4E)
+
+Control unit adaptation
+
+STG adaptation -> function 10
+
+-> channel 001 (volume - warning buzzer at the back)
+Value range: 1 - 9
+
+-> channel 002 (frequency - warning buzzer at the back)
+Value range: 1 - 9
+
+-> channel 003 (volume - warning buzzer in front)
+Value range: 1 - 9
+
+-> Channel 004 (frequency - warning buzzer in front)
+Value range: 1 - 9
+
+-> channel 005 (deactivation acknowledgment)
+Adjustment of the acknowledgment tone when engaging the reverse gear (0 = on / 1 = off).
+
+-> channel 006 (factory settings)
+0 - Reset adjustment channels to factory settings
+1 - Reset MMI values to factory settings
+
+77 Telephone
+STG adjustment -> function 10
+
+-> channel 128 (basic volume audio)
+any further information yet.
+
+-> Channel 129 (Follow-up time mobile)
+From 30 sec to 30 min in seven intervals.
+
+-> Channel 130 (waiting time)
+Waiting time Reference channel for synchronization with audio components.
+
+-> Channel 131 (microphone sensitivity)
+So far no further information.
+
+-> Channel 133 (Bluetooth)
+activation / deactivation, so far no further information.
+
+-> Channel 134 (Bluetooth handsfree function)
+Handsfree only with inserted mobile phone, so far no further information.
+
+-> Channel 135 (Bluetooth PIN)
+So far no further information.
+
+-> Channel 136 (Beep delay value)
+Time interval between key press and acknowledgment tone.
+
+3D (multifunction)
+
+STG Long Coding -> Function 07
+Control unit coding (variant: taxi)
+
+
+Byte 00: vehicle type
+01 - Taxi
+
+Byte 01: Roof sign & taximeter
+00 - Roof sign and taximeter not installed
+01 - Roof sign and taximeter installed
+
+Byte 02: Active and passive alarm
+00 - Active and passive alarm off
+01 - active and passive alarm on
+
+Byte 03: Radio handsfree
+00 - radio handsfree off
+01 - Radio handsfree on
+
+Byte 04: Interior lights
+00 - Interior lights not installed
+01 - Interior lights installed
+
+Control unit coding (variant: driving school)
+
+Byte 00: vehicle type
+02 - driving school
+
+Byte 01: Warning buzzer
+00 - Warning buzzer off when pedal is pressed
+01 - Warning buzzer on pedal operation
+
+Byte 02: footwell lighting
+00 - Footwell lighting off
+01 - footwell lighting on
+
+Control unit coding (variant: injured vehicle)
+
+Byte 00: vehicle type
+03 - Injured vehicle
+
+Byte 01: Evaluation driver door
+00 - Evaluation "Driver's door open" off
+01 - Evaluation "Driver's door open" on
+
+Byte 02: Laying window regulator operation
+00 - Laying window regulator operation not installed
+01 - Installation of window regulator installed
+
+Byte 03: steering wheel remote control
+00 - Steering wheel remote control not installed
+01 - Steering wheel remote control installed
+
+Byte 04: Starter pushbutton
+00 - Starter pushbutton not installed
+
+Control unit coding (variant: injured driving school)
+
+Byte 00: vehicle type
+04 - Diseased Driving School
+
+Byte 01: Warning buzzer
+00 - Warning buzzer off when pedal is pressed
+01 - Warning buzzer on pedal operation
+
+Byte 02: footwell lighting
+00 - Footwell lighting off
+01 - footwell lighting on
+
+Byte 03: Evaluation driver's door
+00 - Evaluation "Driver's door open" off
+01 - Evaluation "Driver's door open" on
+
+Byte 04: Laying window regulator operation
+00 - Laying window regulator operation not installed
+01 - Installation of window regulator installed
+
+Byte 05: Steering wheel remote control
+00 - Steering wheel remote control not installed
+01 - Steering wheel remote control installed
+
+Byte 06: Starter push button
+00 - Starter pushbutton not installed
+01 - Starter push button installed
+
+Control unit coding (variant: special signal vehicle)
+
+Byte 00: vehicle type
+05 - Special signal vehicle
+
+Byte 01: Weapon box
+00 - Weapon box not installed
+01 - Weapon box installed
+
+Byte 02: Horn key
+00 - Horn tactile inactive
+01 - Horn tactile active
+
+Byte 03: Isolating relay for 2nd battery
+00 - isolating relay for 2nd battery not installed
+01 - Isolation relay for 2nd battery installed
+
+Byte 04: Starter savings
+00 - starter lock off at 230V connected
+01 - starter lock on at 230V connected
+
+Byte 05: rear flashers and additional flashers
+00 - rear flashers / additional turn signals not installed
+01 - Heckblitzer installed
+02 - Additional turn signal tailgate installed
+03 - Additional indicator rear installed
+04 - rear flashers and additional turn signals rear installed
+
+Byte 06: Voltage supply radio 1
+00 - Power supply radio 1 Highside (HS) 01 - Power supply radio 1 Lowside (LS)
+Byte 07: Power supply radio 2
+00 - Power supply radio 2 Highside ( HS) 01 - Power supply radio 2 Lowside (LS)
+
+Byte 08: Radio main switch and radio warning number
+00 - Main radio switch and radio buzzer off
+01 - Main radio switch on
+02 - Main radio switch and radio buzzer on
+
+byte 09: Radio handsfree
+00 - Radio handsfree off
+01 - Radio handsfree on
+
+Byte 10: Driving / high beam variant
+00 - Forced or intermittent light off
+01 - Forced driving light on
+02 - Intermittent running light on
+03 - Intermittent high beam on
+
+Byte 11: Engine run
+- on circuit 00 - Engine run - on off
+01 - Engine run - on on
+
+Byte 12: Suppression interior lighting
+00 - Suppression interior lighting off
+01 - Suppression interior lighting on
+
